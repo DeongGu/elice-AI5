@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="index.css" />
-    <title>HTML 복습</title>
+    <title>HTML 복습&자바스크립트 시작</title>
   </head>
   <body>
     <h1>자바스크립트</h1>
@@ -18,6 +18,103 @@
       facilis sapiente quae, alias distinctio eveniet reprehenderit deleniti
       eligendi sit consequatur quis minus fuga. Illo?
     </p>
-    <input type="button" value="공부하기" />
+    <input type="button" value="공부하기" onclick="clickButton()" />
+
+    <input
+      type="button"
+      value="night"
+      onclick="
+  document.querySelector('body').style.backgroundColor='black';
+  document.querySelector('body').style.color='white';
+  document.querySelector('p').style.borderColor='white';"
+    />
+    <input
+      type="button"
+      value="day"
+      onclick="
+document.querySelector('body').style.backgroundColor='white';
+document.querySelector('body').style.color='black';
+document.querySelector('p').style.borderColor='black';"
+    />
+
+    <h2>숫자형</h2>
+
+    <script>
+      function clickButton() {
+        alert("internal 방식!");
+      }
+
+      let number1 = 3;
+      let number2 = 7;
+      document.write(number1 + number2);
+      document.write("<br>");
+      document.write(number1 - number2);
+      document.write("<br>");
+      document.write(number1 * number2);
+      document.write("<br>");
+      document.write(number1 % number2);
+      document.write("<br>");
+      document.writeln(number1 / number2);
+      document.write("<br>");
+      document.write(number1 > number2);
+      document.write("<br>");
+      // 객체 = object = 이름 + 값
+      // 내장객체 = 자바스크립트 안에 모듈이나 패키지
+      // Math
+      // PI : 프로퍼티
+      document.write(Math.PI);
+      document.write("<br>");
+      // ceil() : 메소드
+      document.write(Math.ceil(3.14159));
+      document.write("<br>");
+    </script>
+
+    <h2>문자열</h2>
+    <script>
+      document.write("Hello, world!");
+      document.write("<br>");
+      document.write("It's world");
+      document.write("<br>");
+      document.write("It's \ world");
+      document.write("<br>");
+      document.write(`It's world`); //템플릿 리터럴
+      document.write("<br>");
+
+      //배열을 선언, 리스트
+      let array1 = ["a", "b", "c", "d"];
+      //인덱싱
+      document.write(array1[1]);
+      document.write(array1[3]);
+      document.write("<br>");
+      document.write("Hello, world!"[0]);
+      let helloWorld = "Hello, world!";
+      document.write("<br>");
+
+      //String의 유용한 메소드
+      document.write(helloWorld.slice(0, 5));
+    </script>
+
+    <h2>함수</h2>
+    <script>
+      function printText(text) {
+        document.write(text);
+        document.write("<br>");
+        return "함수가 반환해주는 값";
+      }
+      document.write(printText("매개변수에 값 넘겨주기")); //리턴한 값
+
+      function returnSomething() {
+        return 123;
+      }
+      let variable = returnSomething(); // 123
+      document.write("<br>");
+      document.write(variable); // 123 출력
+      // 익명함수
+      // let returnSomething = function (text) {
+      //   return text;
+      // };
+      // document.write(returnSomething("test 문자열")); // 123
+    </script>
+    <script src="index.js"></script>
   </body>
 </html>
