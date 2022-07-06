@@ -230,7 +230,100 @@ document.querySelector('p').style.borderColor='black';"
       document.write(notOk);
       document.write("<br>");
     </script>
+
+    <h2>사칙/증감 연산자</h2>
+    <script>
+      document.write(3 * 2 + 4 * 5);
+      document.write("<br>");
+      let number = 0;
+      //   number++; // +1 후위 연산자
+      //   number--; // -1
+      //   --number; // -1 전위 연산자
+      //   ++number; // +1
+      document.write(number++);
+      document.write("<br>");
+      document.write(number);
+      document.write("<br>");
+      document.write(number--); // 출력값? 1
+      document.write("<br>");
+      document.write(number);
+      document.write("<br>");
+      document.write(++number); // 출력값? 1
+      document.write("<br>");
+      document.write(--number); // 출력값? 0
+      document.write("<br>");
+
+      //   number = number + 1;
+      number += 1;
+      document.write(number);
+      document.write("<br>");
     </script>
+
+    <h2>비교 연산자</h2>
+    <script>
+      document.write(3 < 4);
+      document.write("<br>");
+      document.write(3 > 4);
+      document.write("<br>");
+      document.write(3 == 3);
+      document.write("<br>");
+      document.write(3 == "3");
+      document.write("<br>");
+      document.write(3 === "3");
+      document.write("<br>");
+      let array = [1, 2, 3];
+      let array2 = [1, 2, 3];
+      let array3 = array; //얕은 복사
+      document.write(array === array2);
+      document.write("<br>");
+      document.write(array == array3);
+      document.write("<br>");
+      document.write(array2 == array3);
+      document.write("<br>");
+      document.write("array: ", array);
+      document.write("<br>");
+      document.write("array2: ", array2);
+      document.write("<br>");
+      document.write("array3: ", array3);
+      document.write("<br>");
+      array.push(4);
+      document.write("array: ", array);
+      document.write("<br>");
+      document.write("array3: ", array3);
+      document.write("<br>");
+
+      let array4 = [];
+      for (let i = 0; i < array3.length; i++) {
+        array4.push(array[i]);
+      }
+      document.write("array4: ", array4);
+      document.write("<br>");
+    </script>
+
+    <h2>논리 연산자</h2>
+    <script>
+      //and $$ , or ||
+      document.write(true && true);
+      document.write("<br>");
+      document.write(true && false);
+      document.write("<br>");
+      document.write(true || false);
+      document.write("<br>");
+      document.write(false || false);
+      document.write("<br>");
+      //0의 경우에 false, 0이 아니면 true
+      document.write(1 && true);
+      document.write("<br>");
+      document.write(true && 1);
+      document.write("<br>");
+
+      let num = 1;
+      document.write(++num && true);
+      document.write("<br>");
+      document.write(num);
+      document.write("<br>");
+    </script>
+
     <script src="index.js"></script>
   </body>
 </html>
