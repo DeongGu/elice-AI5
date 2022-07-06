@@ -323,7 +323,52 @@ document.querySelector('p').style.borderColor='black';"
       document.write(num);
       document.write("<br>");
     </script>
+    <h2>조건문</h2>
+    <script>
+      let numb = parseInt(prompt("숫자를 입력"));
+      if (numb === 1) {
+        document.write("1입니다.");
+      } else if (numb === 2) {
+        document.write("2입니다.");
+      } else {
+        document.write("1도 2도 아닙니다.");
+      }
+    </script>
 
+    <h2>반복문</h2>
+    <script>
+      for (let i = 0; i < 10; i++) {
+        document.write(i);
+      }
+      document.write("<br>");
+      let count = 0;
+      while (count < 10) {
+        document.write(count);
+        count++;
+      }
+      //디버그
+      document.write("<br>");
+      for (let i = 0; i < 10; i += 2) {
+        // debugger;
+        console.log(i);
+        document.write(i);
+      }
+      document.write("<br>");
+      let faces = ["🤪", "😅", "😂"];
+      for (let i = 0; i < faces.length; i++) {
+        document.write(faces[i]);
+      }
+
+      document.write("<br>");
+      do {
+        document.write("첫번째");
+      } while (false);
+
+      let list = ["낙타", "고양이", "닭"];
+      for (let i = 0; i < list.length; i++) {
+        document.write(`<li>${list[i]}</li>`);
+      }
+    </script>
     <script src="index.js"></script>
   </body>
 </html>
