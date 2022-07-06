@@ -9,14 +9,38 @@
   </head>
   <body>
     <h1>자바스크립트</h1>
+    <p id="javascript-explain">
+      <strong>JavaScript</strong> is
+      <span
+        onclick="document.querySelector('#javascript-explain').innerHTML=`<strong>JavaScript</strong> is Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla aliquid
+      suscipit enim perferendis placeat, harum error quia ab animi! Consectetur
+      magni quos illum accusamus eos inventore quisquam esse eligendi
+      voluptatem. Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+      Repellat odit fugit iusto dolore numquam inventore facilis sapiente quae,
+      alias distinctio eveniet reprehenderit deleniti eligendi sit consequatur
+      quis minus fuga. Illo?`"
+        style="background-color: aqua"
+        >...</span
+      >
+    </p>
+    <h2>파이썬</h2>
     <p>
-      <strong>JavaScript</strong> is Lorem ipsum dolor sit amet consectetur
-      adipisicing elit. Nulla aliquid suscipit enim perferendis placeat, harum
-      error quia ab animi! Consectetur magni quos illum accusamus eos inventore
-      quisquam esse eligendi voluptatem. Lorem ipsum dolor, sit amet consectetur
-      adipisicing elit. Repellat odit fugit iusto dolore numquam inventore
-      facilis sapiente quae, alias distinctio eveniet reprehenderit deleniti
-      eligendi sit consequatur quis minus fuga. Illo?
+      Python is
+      <span
+        style="background-color: gray; padding: 0 5px; cursor: pointer"
+        onclick="
+        this.style.display = 'none';
+        document.querySelector('#python-explain').style.display = 'inline';
+        "
+      >
+        ...
+      </span>
+      <span id="python-explain" style="display: none">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore cumque
+        dolore fugiat quia dolores? Sed sit quod, perferendis, adipisci
+        voluptate mollitia nemo earum aperiam minus ab repellat consequatur
+        repellendus rem.
+      </span>
     </p>
     <input type="button" value="공부하기" onclick="clickButton()" />
 
@@ -114,6 +138,98 @@ document.querySelector('p').style.borderColor='black';"
       //   return text;
       // };
       // document.write(returnSomething("test 문자열")); // 123
+    </script>
+    <h2>숫자와 문자열</h2>
+    <script>
+      document.write(1 + 1);
+      document.write("<br>");
+      document.write("1" + "1"); // 문자열을 더하면
+      document.write("<br>");
+      document.write(typeof (1 + "1")); // 숫자랑 문자열을 더하면 2? 11?
+      document.write("<br>");
+      document.write(typeof ("11" - "1")); // 문자열을 빼면?
+      document.write("<br>");
+    </script>
+    <h2>함수</h2>
+    <script>
+      let principal = 100;
+      let interest = 0.1;
+      let month = 2;
+      document.write(principal * interest * month);
+      document.write("<br>");
+
+      function calculateInterest(p, m, i = 0.1) {
+        return p * m * i;
+      }
+      document.write(calculateInterest(100, 2));
+      document.write("<br>");
+    </script>
+    <h2>배열</h2>
+    <script>
+      let animals = ["🐄", "🐖", "🐫"];
+      document.write(animals);
+      document.write("<br>");
+      document.write(animals.pop());
+      document.write("<br>");
+      document.write(animals);
+      document.write("<br>");
+      document.write(animals.push("🦉"));
+      document.write("<br>");
+      document.write(animals);
+      document.write("<br>");
+    </script>
+    <h2>객체</h2>
+    <script>
+      let animal = {
+        cow: "🐄",
+        pig: "🐖",
+        camel: "🐫",
+        crying: function () {
+          document.write("멍멍");
+          return "리턴값";
+        },
+      };
+      function crying2() {
+        document.write("멍멍");
+        return "리턴값";
+      }
+      console.log(animal);
+      document.write(animal);
+      document.write("<br>");
+      document.write(animal.cow);
+      document.write("<br>");
+      document.write(animal["cow"]);
+      document.write("<br>");
+      document.write(JSON.stringify(animal));
+      document.write("<br>");
+      let 변수 = animal.crying();
+      let 변수2 = crying(); // 함수명만 바로 입력
+    </script>
+
+    <h2>undefined, null, NaN</h2>
+    <script>
+      let example1;
+      document.write(example1);
+      document.write("<br>");
+      let example2 = null;
+      document.write(example2);
+      document.write("<br>");
+      let example3 = 3 * "a";
+      document.write(example3);
+      document.write("<br>");
+      document.write(+(+"a"));
+      document.write("<br>");
+      document.write(("b" + "a" + +"a" + "a").toLowerCase());
+    </script>
+    <h2>boolean</h2>
+    <script>
+      let ok = true;
+      document.write(ok);
+      document.write("<br>");
+      let notOk = false;
+      document.write(notOk);
+      document.write("<br>");
+    </script>
     </script>
     <script src="index.js"></script>
   </body>
