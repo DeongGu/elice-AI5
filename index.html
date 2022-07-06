@@ -61,6 +61,30 @@ document.querySelector('body').style.color='black';
 document.querySelector('p').style.borderColor='black';"
     />
 
+    <input
+      type="button"
+      value="night"
+      onclick="
+    if(this.value === 'night') {
+      document.querySelector('body').style.backgroundColor = 'black';
+      document.querySelector('body').style.color = 'white';
+      let pElem = document.querySelectorAll('p');
+      console.log(pElem);
+      for (let i = 0; i < pElem.length; i++) {
+        pElem[i].style.borderColor = 'white';
+      }
+      this.value = 'day'
+    } else if (this.value === 'day') {
+      document.querySelector('body').style.backgroundColor = 'white';
+      document.querySelector('body').style.color = 'black';
+      let pElem = document.querySelectorAll('p');
+      for (let i = 0; i < pElem.length; i++) {
+        pElem[i].style.borderColor = 'black';
+      }
+      this.value = 'night'
+    }
+  "
+    />
     <h2>숫자형</h2>
 
     <script>
