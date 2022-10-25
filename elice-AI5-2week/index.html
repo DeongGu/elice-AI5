@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>HTML 복습&자바스크립트 시작</title>
+  </head>
+  <body>
+    <h1>자바스크립트</h1>
+    <p id="javascript-explain">
+      <strong>JavaScript</strong> is
+      <span
+        onclick="document.querySelector('#javascript-explain').innerHTML=`<strong>JavaScript</strong> is Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla aliquid
+      suscipit enim perferendis placeat, harum error quia ab animi! Consectetur
+      magni quos illum accusamus eos inventore quisquam esse eligendi
+      voluptatem. Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+      Repellat odit fugit iusto dolore numquam inventore facilis sapiente quae,
+      alias distinctio eveniet reprehenderit deleniti eligendi sit consequatur
+      quis minus fuga. Illo?`"
+        style="background-color: aqua"
+        >...</span
+      >
+    </p>
+    <h2>파이썬</h2>
+    <p>
+      Python is
+      <span
+        style="background-color: gray; padding: 0 5px; cursor: pointer"
+        onclick="
+        this.style.display = 'none';
+        document.querySelector('#python-explain').style.display = 'inline';
+        "
+      >
+        ...
+      </span>
+      <span id="python-explain" style="display: none">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore cumque
+        dolore fugiat quia dolores? Sed sit quod, perferendis, adipisci
+        voluptate mollitia nemo earum aperiam minus ab repellat consequatur
+        repellendus rem.
+      </span>
+    </p>
+    <input type="button" value="공부하기" onclick="clickButton()" />
+
+    <input
+      type="button"
+      value="night"
+      onclick="
+  document.querySelector('body').style.backgroundColor='black';
+  document.querySelector('body').style.color='white';
+  document.querySelector('p').style.borderColor='white';"
+    />
+    <input
+      type="button"
+      value="day"
+      onclick="
+document.querySelector('body').style.backgroundColor='white';
+document.querySelector('body').style.color='black';
+document.querySelector('p').style.borderColor='black';"
+    />
+
+    <input
+      type="button"
+      value="night"
+      onclick="
+    if(this.value === 'night') {
+      document.querySelector('body').style.backgroundColor = 'black';
+      document.querySelector('body').style.color = 'white';
+      let pElem = document.querySelectorAll('p');
+      console.log(pElem);
+      for (let i = 0; i < pElem.length; i++) {
+        pElem[i].style.borderColor = 'white';
+      }
+      this.value = 'day'
+    } else if (this.value === 'day') {
+      document.querySelector('body').style.backgroundColor = 'white';
+      document.querySelector('body').style.color = 'black';
+      let pElem = document.querySelectorAll('p');
+      for (let i = 0; i < pElem.length; i++) {
+        pElem[i].style.borderColor = 'black';
+      }
+      this.value = 'night'
+    }
+  "
+    />
+    <h2>숫자형</h2>
+
+    <script>
+      function clickButton() {
+        alert("internal 방식!");
+      }
+
+      let number1 = 3;
+      let number2 = 7;
+      document.write(number1 + number2);
+      document.write("<br>");
+      document.write(number1 - number2);
+      document.write("<br>");
+      document.write(number1 * number2);
+      document.write("<br>");
+      document.write(number1 % number2);
+      document.write("<br>");
+      document.writeln(number1 / number2);
+      document.write("<br>");
+      document.write(number1 > number2);
+      document.write("<br>");
+      // 객체 = object = 이름 + 값
+      // 내장객체 = 자바스크립트 안에 모듈이나 패키지
+      // Math
+      // PI : 프로퍼티
+      document.write(Math.PI);
+      document.write("<br>");
+      // ceil() : 메소드
+      document.write(Math.ceil(3.14159));
+      document.write("<br>");
+    </script>
+
+    <h2>문자열</h2>
+    <script>
+      document.write("Hello, world!");
+      document.write("<br>");
+      document.write("It's world");
+      document.write("<br>");
+      document.write("It's \ world");
+      document.write("<br>");
+      document.write(`It's world`); //템플릿 리터럴
+      document.write("<br>");
+
+      //배열을 선언, 리스트
+      let array1 = ["a", "b", "c", "d"];
+      //인덱싱
+      document.write(array1[1]);
+      document.write(array1[3]);
+      document.write("<br>");
+      document.write("Hello, world!"[0]);
+      let helloWorld = "Hello, world!";
+      document.write("<br>");
+
+      //String의 유용한 메소드
+      document.write(helloWorld.slice(0, 5));
+    </script>
+
+    <h2>함수</h2>
+    <script>
+      function printText(text) {
+        document.write(text);
+        document.write("<br>");
+        return "함수가 반환해주는 값";
+      }
+      document.write(printText("매개변수에 값 넘겨주기")); //리턴한 값
+
+      function returnSomething() {
+        return 123;
+      }
+      let variable = returnSomething(); // 123
+      document.write("<br>");
+      document.write(variable); // 123 출력
+      // 익명함수
+      // let returnSomething = function (text) {
+      //   return text;
+      // };
+      // document.write(returnSomething("test 문자열")); // 123
+    </script>
+    <h2>숫자와 문자열</h2>
+    <script>
+      document.write(1 + 1);
+      document.write("<br>");
+      document.write("1" + "1"); // 문자열을 더하면
+      document.write("<br>");
+      document.write(typeof (1 + "1")); // 숫자랑 문자열을 더하면 2? 11?
+      document.write("<br>");
+      document.write(typeof ("11" - "1")); // 문자열을 빼면?
+      document.write("<br>");
+    </script>
+    <h2>함수</h2>
+    <script>
+      let principal = 100;
+      let interest = 0.1;
+      let month = 2;
+      document.write(principal * interest * month);
+      document.write("<br>");
+
+      function calculateInterest(p, m, i = 0.1) {
+        return p * m * i;
+      }
+      document.write(calculateInterest(100, 2));
+      document.write("<br>");
+    </script>
+    <h2>배열</h2>
+    <script>
+      let animals = ["🐄", "🐖", "🐫"];
+      document.write(animals);
+      document.write("<br>");
+      document.write(animals.pop());
+      document.write("<br>");
+      document.write(animals);
+      document.write("<br>");
+      document.write(animals.push("🦉"));
+      document.write("<br>");
+      document.write(animals);
+      document.write("<br>");
+    </script>
+    <h2>객체</h2>
+    <script>
+      let animal = {
+        cow: "🐄",
+        pig: "🐖",
+        camel: "🐫",
+        crying: function () {
+          document.write("멍멍");
+          return "리턴값";
+        },
+      };
+      function crying2() {
+        document.write("멍멍");
+        return "리턴값";
+      }
+      console.log(animal);
+      document.write(animal);
+      document.write("<br>");
+      document.write(animal.cow);
+      document.write("<br>");
+      document.write(animal["cow"]);
+      document.write("<br>");
+      document.write(JSON.stringify(animal));
+      document.write("<br>");
+      let 변수 = animal.crying();
+      let 변수2 = crying(); // 함수명만 바로 입력
+    </script>
+
+    <h2>undefined, null, NaN</h2>
+    <script>
+      let example1;
+      document.write(example1);
+      document.write("<br>");
+      let example2 = null;
+      document.write(example2);
+      document.write("<br>");
+      let example3 = 3 * "a";
+      document.write(example3);
+      document.write("<br>");
+      document.write(+(+"a"));
+      document.write("<br>");
+      document.write(("b" + "a" + +"a" + "a").toLowerCase());
+    </script>
+    <h2>boolean</h2>
+    <script>
+      let ok = true;
+      document.write(ok);
+      document.write("<br>");
+      let notOk = false;
+      document.write(notOk);
+      document.write("<br>");
+    </script>
+
+    <h2>사칙/증감 연산자</h2>
+    <script>
+      document.write(3 * 2 + 4 * 5);
+      document.write("<br>");
+      let number = 0;
+      //   number++; // +1 후위 연산자
+      //   number--; // -1
+      //   --number; // -1 전위 연산자
+      //   ++number; // +1
+      document.write(number++);
+      document.write("<br>");
+      document.write(number);
+      document.write("<br>");
+      document.write(number--); // 출력값? 1
+      document.write("<br>");
+      document.write(number);
+      document.write("<br>");
+      document.write(++number); // 출력값? 1
+      document.write("<br>");
+      document.write(--number); // 출력값? 0
+      document.write("<br>");
+
+      //   number = number + 1;
+      number += 1;
+      document.write(number);
+      document.write("<br>");
+    </script>
+
+    <h2>비교 연산자</h2>
+    <script>
+      document.write(3 < 4);
+      document.write("<br>");
+      document.write(3 > 4);
+      document.write("<br>");
+      document.write(3 == 3);
+      document.write("<br>");
+      document.write(3 == "3");
+      document.write("<br>");
+      document.write(3 === "3");
+      document.write("<br>");
+      let array = [1, 2, 3];
+      let array2 = [1, 2, 3];
+      let array3 = array; //얕은 복사
+      document.write(array === array2);
+      document.write("<br>");
+      document.write(array == array3);
+      document.write("<br>");
+      document.write(array2 == array3);
+      document.write("<br>");
+      document.write("array: ", array);
+      document.write("<br>");
+      document.write("array2: ", array2);
+      document.write("<br>");
+      document.write("array3: ", array3);
+      document.write("<br>");
+      array.push(4);
+      document.write("array: ", array);
+      document.write("<br>");
+      document.write("array3: ", array3);
+      document.write("<br>");
+
+      let array4 = [];
+      for (let i = 0; i < array3.length; i++) {
+        array4.push(array[i]);
+      }
+      document.write("array4: ", array4);
+      document.write("<br>");
+    </script>
+
+    <h2>논리 연산자</h2>
+    <script>
+      //and $$ , or ||
+      document.write(true && true);
+      document.write("<br>");
+      document.write(true && false);
+      document.write("<br>");
+      document.write(true || false);
+      document.write("<br>");
+      document.write(false || false);
+      document.write("<br>");
+      //0의 경우에 false, 0이 아니면 true
+      document.write(1 && true);
+      document.write("<br>");
+      document.write(true && 1);
+      document.write("<br>");
+
+      let num = 1;
+      document.write(++num && true);
+      document.write("<br>");
+      document.write(num);
+      document.write("<br>");
+    </script>
+    <h2>조건문</h2>
+    <script>
+      let numb = parseInt(prompt("숫자를 입력"));
+      if (numb === 1) {
+        document.write("1입니다.");
+      } else if (numb === 2) {
+        document.write("2입니다.");
+      } else {
+        document.write("1도 2도 아닙니다.");
+      }
+    </script>
+
+    <h2>반복문</h2>
+    <script>
+      for (let i = 0; i < 10; i++) {
+        document.write(i);
+      }
+      document.write("<br>");
+      let count = 0;
+      while (count < 10) {
+        document.write(count);
+        count++;
+      }
+      //디버그
+      document.write("<br>");
+      for (let i = 0; i < 10; i += 2) {
+        // debugger;
+        console.log(i);
+        document.write(i);
+      }
+      document.write("<br>");
+      let faces = ["🤪", "😅", "😂"];
+      for (let i = 0; i < faces.length; i++) {
+        document.write(faces[i]);
+      }
+
+      document.write("<br>");
+      do {
+        document.write("첫번째");
+      } while (false);
+
+      let list = ["낙타", "고양이", "닭"];
+      for (let i = 0; i < list.length; i++) {
+        document.write(`<li>${list[i]}</li>`);
+      }
+    </script>
+    <script src="index.js"></script>
+  </body>
+</html>
