@@ -1,0 +1,51 @@
+@charset "utf-8";
+
+.animation {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: yellowgreen;
+  border: 1px solid black;
+
+  transition: margin 1s linear;
+}
+
+.animation:hover {
+  margin: 50px;
+  transform: skew(10deg, 20deg);
+}
+
+.animation2 {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: blueviolet;
+  animation: small 4s ease-in infinite alternate;
+}
+
+@keyframes small {
+  from {
+    transform: scale(1, 1);
+  }
+  to {
+    transform: scale(0.1, 0.1);
+  }
+}
+
+.animation3 {
+  width: 200px;
+  height: 200px;
+  background-color: red;
+
+  animation: rotation 1s ease-in-out infinite alternate;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(-10deg);
+  }
+
+  to {
+    transform: rotate(10deg);
+  }
+}
